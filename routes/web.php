@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* agrupamos la ruta por grupo y usamos un mismo prefijo */
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'AdminController@index')->name('home');
+    Route::get('heroes', 'HeroController@index')->name('heroes');
+    Route::get('items', 'ItemController@index')->name('items');
+    Route::get('enemies', 'EnemyController@index')->name('enemies');
+});
