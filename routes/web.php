@@ -19,8 +19,16 @@ Route::get('/', function () {
 
 /* agrupamos la ruta por grupo y usamos un mismo prefijo */
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('/', 'AdminController@index')->name('home');
-    Route::get('heroes', 'HeroController@index')->name('heroes');
-    Route::get('items', 'ItemController@index')->name('items');
-    Route::get('enemies', 'EnemyController@index')->name('enemies');
+    Route::get('/', 'AdminController@index')->name('admin');
+
+    Route::group(['prefix' => 'heroes'], function () {
+        Route::get('/', 'HeroController@index')->name('admin.heroes');
+        Route::get('create', 'HeroController@create')->name('admin.heroes.create');
+        Route::post('store', 'HeroController@store')->name('admin.heroes.store');
+    });
+
+    Route::get('items', 'ItemController@index')->name('admin.items');
+    Route::get('enemies', 'EnemyController@index')->name('admin.enemies');
 });
+
+

@@ -12,29 +12,29 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{{ route('home') }}">HeroApp</a>
+    <a class="navbar-brand" href="{{ route('admin') }}">HeroApp</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">Inicio</a>
+          <a class="nav-link" href="{{ route('admin') }}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('heroes') }}">Heroes</a>
+          <a class="nav-link" href="{{ route('admin.heroes') }}">Heroes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('items') }}">Items</a>
+          <a class="nav-link" href="{{ route('admin.items') }}">Items</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('enemies') }}">Enemigos</a>
+          <a class="nav-link" href="{{ route('admin.enemies') }}">Enemigos</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container mt-2">
       @yield('content')
   </div>
 
