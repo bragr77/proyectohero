@@ -38,6 +38,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Crear</button>
+        <a href="{{ route('heroes') }}" class="btn btn-danger">Cancelar</a>
 
     </form>
 
