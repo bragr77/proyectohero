@@ -33,7 +33,7 @@ class HeroController extends Controller
 
         $hero->save();
 
-        return redirect()->route('admin.heroes');
+        return redirect()->route('heroes');
 
     }
 }

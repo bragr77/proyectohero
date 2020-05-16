@@ -3,7 +3,7 @@
 @section('content')
     <h1>CREAR NUEVO HEROE</h1>
 
-    <form action="{{ route('admin.heroes.store') }}" method="POST">
+    <form action="{{ route('heroesstore') }}" method="POST">
 
         @csrf
 

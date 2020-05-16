@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <a href="{{ route('admin.heroes.create') }}" class="btn btn-primary mb-3">Crear Heroe</a>
+        <a href="{{ route('heroescreate') }}" class="btn btn-primary mb-3">Crear Heroe</a>
     </div>
 
     <div class="row">

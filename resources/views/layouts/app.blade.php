@@ -22,13 +22,13 @@
           <a class="nav-link" href="{{ route('admin') }}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('admin.heroes') }}">Heroes</a>
+          <a class="nav-link" href="{{ route('heroes') }}">Heroes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('admin.items') }}">Items</a>
+          <a class="nav-link" href="{{ route('items') }}">Items</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('admin.enemies') }}">Enemigos</a>
+          <a class="nav-link" href="{{ route('enemies') }}">Enemigos</a>
         </li>
       </ul>
     </div>
