@@ -51,6 +51,11 @@
 
             </tbody>
         </table>
+        <div class="container">
+            <div class="pagination justify-content-center">
+                {{ $heroes->links() }}
+            </div>
+        </div>
     </div>
 
 @endsection

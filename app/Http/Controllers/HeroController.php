@@ -9,7 +9,7 @@ class HeroController extends Controller
 {
     public function index(){
 
-        $heroes = Hero::all();
+        $heroes = Hero::paginate(10);
 
         return view('admin.heroes.index', ['heroes' => $heroes]);
     }
