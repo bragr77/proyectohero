@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <a href="{{ route('heroescreate') }}" class="btn btn-primary mb-3">Crear Heroe</a>
+        <a href="{{ route('heroes.create') }}" class="btn btn-primary mb-3">Crear Heroe</a>
     </div>
 
     <div class="row">
@@ -38,8 +38,8 @@
                         <td>{{ $hero->xp }}</td>
                         <td>
                             <div class="row">
-                                <a href="{{ route('heroesedit', ['id' => $hero->id]) }}" class="mr-1 btn btn-success btn-sm">Modificar</a>
-                                <form action="{{ route('heroesdestroy', ['id' => $hero->id]) }}" method="POST">
+                                <a href="{{ route('heroes.edit', $hero) }}" class="mr-1 btn btn-success btn-sm">Modificar</a>
+                                <form action="{{ route('heroes.destroy', $hero) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="ml-1 btn btn-danger btn-sm">Eliminar</button>

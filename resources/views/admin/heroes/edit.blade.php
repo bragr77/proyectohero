@@ -3,9 +3,10 @@
 @section('content')
     <h1>EDITAR HEROE</h1>
 
-    <form action="{{ route('heroesupdate', ['id' => $hero->id]) }}" method="POST">
+    <form action="{{ route('heroes.update', $hero) }}" method="POST">
 
         @csrf
+        @method('PUT')
 
         <div class="form-group">
             <label for="name">Nombre</label>
@@ -38,7 +39,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">Actualizar</button>
-        <a href="{{ route('heroes') }}" class="btn btn-danger">Cancelar</a>
+        <a href="{{ route('heroes.index') }}" class="btn btn-danger">Cancelar</a>
 
     </form>
 

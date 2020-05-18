@@ -22,7 +22,7 @@
           <a class="nav-link" href="{{ route('admin') }}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('heroes') }}">Heroes</a>
+          <a class="nav-link" href="{{ route('heroes.index') }}">Heroes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('items') }}">Items</a>

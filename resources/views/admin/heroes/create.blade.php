@@ -3,7 +3,7 @@
 @section('content')
     <h1>CREAR NUEVO HEROE</h1>
 
-    <form action="{{ route('heroesstore') }}" method="POST">
+    <form action="{{ route('heroes.store') }}" method="POST">
 
         @csrf
 
@@ -38,7 +38,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Crear</button>
-        <a href="{{ route('heroes') }}" class="btn btn-danger">Cancelar</a>
+        <a href="{{ route('heroes.index') }}" class="btn btn-danger">Cancelar</a>
 
     </form>
 
