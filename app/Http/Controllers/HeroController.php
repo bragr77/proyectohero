@@ -9,7 +9,7 @@ class HeroController extends Controller
 {
     public function index(){
 
-        $heroes = Hero::latest()->paginate(3);
+        $heroes = Hero::latest()->paginate(10);
 
         return view('admin.heroes.index', ['heroes' => $heroes]);
     }
@@ -28,6 +28,23 @@ class HeroController extends Controller
 
         return $this->saveHero($request, $id);
 
+    }
+
+
+    public function edit($id){
+
+        $hero = Hero::find($id);
+
+        return view('admin.heroes.edit', ['hero' => $hero]);
+    }
+
+    public function destroy($id){
+
+        $hero = Hero::find($id);
+
+        $hero->delete();
+
+        return redirect()->route('heroes.index');
     }
 
     public function saveHero(Request $request, $id){
@@ -54,21 +71,4 @@ class HeroController extends Controller
         return redirect()->route('heroes.index');
 
     }
-
-    public function edit($id){
-
-        $hero = Hero::find($id);
-
-        return view('admin.heroes.edit', ['hero' => $hero]);
-    }
-
-    public function destroy($id){
-
-        $hero = Hero::find($id);
-
-        $hero->delete();
-
-        return redirect()->route('heroes.index');
-    }
-
 }

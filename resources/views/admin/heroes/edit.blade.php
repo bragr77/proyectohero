@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>EDITAR HEROE</h1>
+    <h1>EDITAR HEROE: {{ $hero->name }}</h1>
 
     <form action="{{ route('heroes.update', $hero) }}" method="POST">
 
