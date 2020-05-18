@@ -24,7 +24,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('heroes', 'HeroController');
 
     Route::resource('item', 'ItemController');
-    Route::get('enemies', 'EnemyController@index')->name('enemies');
+    Route::resource('enemy', 'EnemyController');
+
 });
 
 
