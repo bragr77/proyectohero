@@ -28,13 +28,48 @@ class BSController extends Controller
                     $enemy->hp -= $hp * -1;
                 }
 
-                dd($enemy->hp);
+                if ($enemy->hp > 0) {
+                    $ev = [
+                        "winner" => "hero",
+                        "text" => $hero->name . " hizo un daño de " . $hero->atq . " a " . $enemy->name
+                    ];
+                }else {
+                    $ev = [
+                        "winner" => "hero",
+                        "text" => $hero->name . " acabo con la vida de " . $enemy->name
+                    ];
+                }
+
             }else{
+
+                $hp = $hero->def -$enemy->atq;
+
+                if ($hp < 0) {
+                    $hero->hp -= $hp * -1;
+                }
+
+                if ($hero->hp > 0) {
+                    $ev = [
+                        "winner" => "enemy",
+                        "text" => $hero->name . " recibio un daño de " . $enemy->atq . " por " . $enemy->name
+                    ];
+                } else {
+                    $ev = [
+                        "winner" => "enemy",
+                        "text" => $hero->name . " fue asesinado por " . $enemy->name
+                    ];
+                }
 
             }
 
+            array_push($events, $ev);
+
         }
 
-        return view('admin.bs.index');
+        return view('admin.bs.index', [
+           "events" => $events,
+           "heroName" => $hero->name,
+           "enemyName" => $enemy->name
+        ]);
     }
 }
