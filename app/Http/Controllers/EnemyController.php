@@ -14,9 +14,13 @@ class EnemyController extends Controller
      */
     public function index()
     {
+        $cont = 1;
         $enemies = Enemy::latest()->paginate(10);
 
-        return view('admin.enemies.index', ['enemies' => $enemies]);
+        return view('admin.enemies.index', [
+            'enemies' => $enemies,
+            'cont' => $cont
+        ]);
     }
 
     /**

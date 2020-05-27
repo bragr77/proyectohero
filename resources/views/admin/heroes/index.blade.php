@@ -28,7 +28,7 @@
 
                 @foreach ($heroes as $hero)
                     <tr>
-                        <th scope="row">{{ $hero->id }}</th>
+                        <th scope="row">{{ $cont++ }}</th>
                         <td>{{ $hero->name }}</td>
                         <td>{{ $hero->hp }}</td>
                         <td>{{ $hero->atq }}</td>

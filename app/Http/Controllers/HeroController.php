@@ -9,9 +9,13 @@ class HeroController extends Controller
 {
     public function index(){
 
+        $cont = 1;
         $heroes = Hero::latest()->paginate(10);
 
-        return view('admin.heroes.index', ['heroes' => $heroes]);
+        return view('admin.heroes.index', [
+            'heroes' => $heroes,
+            'cont' => $cont
+        ]);
     }
 
     public function create(){
