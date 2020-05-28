@@ -21,6 +21,7 @@
                 <th scope="col">Suerte</th>
                 <th scope="col">Monedas</th>
                 <th scope="col">Experiencia</th>
+                <th scope="col">Nivel</th>
                 <th scope="col">Acciones</th>
               </tr>
             </thead>
@@ -36,6 +37,7 @@
                         <td>{{ $hero->luck }}</td>
                         <td>{{ $hero->coins }}</td>
                         <td>{{ $hero->xp }}</td>
+                        <td>{{ $hero->level_id }}</td>
                         <td>
                             <div class="row">
                                 <a href="{{ route('heroes.edit', $hero) }}" class="mr-1 btn btn-success btn-sm">Modificar</a>

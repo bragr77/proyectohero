@@ -11,8 +11,14 @@ class BSController extends Controller
 {
     public function index(){
 
-        $hero   = Hero::find(1)->first();
-        $enemy  = Enemy::find(2)->first();
+        return view('admin.bs.index', $this->runAutoBattle(1,2));
+
+    }
+
+    public function runAutoBattle($heroId, $enemyId)
+    {
+        $hero   = Hero::find($heroId)->first();
+        $enemy  = Enemy::find($enemyId)->first();
 
         $events = [];
 
@@ -36,8 +42,17 @@ class BSController extends Controller
                 }else {
                     $ev = [
                         "winner" => "hero",
-                        "text" => $hero->name . " acabo con la vida de " . $enemy->name
+                        "text" => $hero->name . " acabo con la vida de " . $enemy->name . " y gano " . $enemy->xp . " de experiencia"
                     ];
+
+                    $hero->xp = $hero->xp + $enemy->xp;
+
+                    if ($hero->xp >= $hero->level->xp) {
+                        $hero->xp = 0;
+                        $hero->level_id += 1;
+                    }
+
+                    $hero->save();
                 }
 
             }else{
@@ -66,10 +81,10 @@ class BSController extends Controller
 
         }
 
-        return view('admin.bs.index', [
-           "events" => $events,
-           "heroName" => $hero->name,
-           "enemyName" => $enemy->name
-        ]);
+        return[
+            "events" => $events,
+            "heroName" => $hero->name,
+            "enemyName" => $enemy->name
+        ];
     }
 }
