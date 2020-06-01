@@ -10,7 +10,7 @@ class HeroController extends Controller
     public function index(){
 
         $cont = 1;
-        $heroes = Hero::latest()->paginate(10);
+        $heroes = Hero::paginate(10); //muestra los datos de 10 en 10 con una paginación en la vista
 
         return view('admin.heroes.index', [
             'heroes' => $heroes,
