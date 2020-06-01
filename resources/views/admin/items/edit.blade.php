@@ -3,7 +3,7 @@
 @section('content')
     <h1>EDITAR ITEM: {{ $item->name }} </h1>
 
-    <form action="{{ route('item.update', $item) }}" method="POST">
+    <form action="{{ route('item.update', $item) }}" method="POST" enctype="multipart/form-data">
 
         @method('PUT')
 

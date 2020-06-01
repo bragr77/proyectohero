@@ -3,7 +3,7 @@
 @section('content')
     <h1>CREAR NUEVO ITEM</h1>
 
-    <form action="{{ route('item.store') }}" method="POST">
+    <form action="{{ route('item.store') }}" method="POST" enctype="multipart/form-data">
 
         @include('admin.items.form')
 

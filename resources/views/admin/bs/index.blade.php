@@ -10,14 +10,16 @@
 
         <div class="col-5 card bg-primary">
             <h2>{{ $heroName }}</h2>
+            <img src="{{ asset('img/heroes/' . $heroAvatar) }}" class="mx-auto img-thumbnail" width="100px" height="100px">
         </div>
 
         <div class="col card bg-warning mx-1">
-            <h2>VS.</h2>
+            <h2 class="my-auto">VS.</h2>
         </div>
 
         <div class="col-5 card bg-danger">
             <h2>{{ $enemyName }}</h2>
+            <img src="{{ asset('img/enemies/' . $enemyAvatar) }}" class="mb-2 mx-auto img-thumbnail" width="100px" height="100px">
         </div>
 
     </div>

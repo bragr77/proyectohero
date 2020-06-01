@@ -30,3 +30,7 @@
     <input type="number" class="form-control" id="xp" name="xp" @isset($enemy) value="{{ $enemy->xp }}" @endisset placeholder="Ingrese la experiencia" required>
 </div>
 
+<div class="form-group">
+    <label for="img_path">Seleccione una Imagen</label>
+    <input type="file" class="form-control-file" id="img_path" name="img_path">
+</div>

@@ -30,6 +30,11 @@
     <input type="number" class="form-control" id="coins" name="coins" @isset($hero) value="{{ $hero->coins }}" @endisset placeholder="Ingrese la cantidad de Monedas" required>
 </div>
 
+<div class="form-group">
+    <label for="img_path">Seleccione una Imagen</label>
+    <input type="file" class="form-control-file" id="img_path" name="img_path">
+</div>
+
 
 
 

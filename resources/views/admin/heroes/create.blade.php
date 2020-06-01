@@ -3,7 +3,7 @@
 @section('content')
     <h1>CREAR NUEVO HEROE</h1>
 
-    <form action="{{ route('heroes.store') }}" method="POST">
+    <form action="{{ route('heroes.store') }}" method="POST" enctype="multipart/form-data">
 
         @include('admin.heroes.form')
 

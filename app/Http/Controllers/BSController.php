@@ -84,9 +84,11 @@ class BSController extends Controller
         }
 
         return[
-            "events" => $events,
-            "heroName" => $hero->name,
-            "enemyName" => $enemy->name
+            "events"        => $events,
+            "heroName"      => $hero->name,
+            "enemyName"     => $enemy->name,
+            "heroAvatar"    => $hero->img_path,
+            "enemyAvatar"   => $enemy->img_path
         ];
     }
 
